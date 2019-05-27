@@ -8,7 +8,7 @@ var mongoose = require("mongoose");
 
 var PORT = process.env.PORT || 3000;
 
-// var db = require("./models");
+var db = require("./models");
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-// require("./routes/dataRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require("./routes/dataRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, function(){
     console.log("App listening on port " + PORT)
